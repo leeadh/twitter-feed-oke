@@ -64,4 +64,4 @@ deploy-to-clustertest:
       server: $KUBERNETES_MASTER
       token: $KUBERNETES_TOKEN
       insecure-skip-tls-verify: true
-      command: apply -f ./kubernetes.yml --namespace=$NS
+      command: apply -f ./kubernetes.yml --namespace=$NSTEST
