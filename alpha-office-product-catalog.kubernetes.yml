@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: product-catalog-app-container
-        image: derekoneil/alpha-office-product-catalog
+        image: leexha/alpha-office-product-catalog-sit
         imagePullPolicy: Always
         ports:
         - name: pc-app-port
@@ -40,5 +40,5 @@ spec:
   selector:
     app: product-catalog-app
     commit: 48f74f435786d54673ac8c01f06a5fc69fb4b484
-  type: LoadBalancer
+  type: NodePort
 ---
