@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: product-catalog-app-container
-        image: derekoneil/alpha-office-product-catalog
+        image: leexha/alpha-office-product-catalog-sit
         imagePullPolicy: Always
         ports:
         - name: pc-app-port
