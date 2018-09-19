@@ -5,7 +5,7 @@ box:
     - $PORT
 
 #Build our application using Maven, just as we always have
-build:
+build-SIT:
   steps:
     - install-packages:
         packages: maven
@@ -15,7 +15,7 @@ build:
 
 
 #Push the docker image with our built and tested application to the Oracle Container Registry
-push-release:
+push-releaseSIT:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
@@ -29,7 +29,7 @@ push-release:
 
 
 #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
-deploy-to-cluster:
+deploy-to-clusterSIT:
   box:
       id: alpine
       cmd: /bin/sh
@@ -52,7 +52,7 @@ deploy-to-cluster:
       server: $KUBERNETES_MASTER
       token: $KUBERNETES_TOKEN
       insecure-skip-tls-verify: true
-      command: delete secret okeworkshop --namespace=$NS --ignore-not-found=true
+      command: delete secret okeworkshop --namespace=$NSSIT --ignore-not-found=true
   - kubectl:
       name: create OCR secret
       server: $KUBERNETES_SERVER
@@ -64,4 +64,4 @@ deploy-to-cluster:
       server: $KUBERNETES_MASTER
       token: $KUBERNETES_TOKEN
       insecure-skip-tls-verify: true
-      command: apply -f ./kubernetes.yml --namespace=$NS
+      command: apply -f ./kubernetes.yml --namespace=$NSSIT
