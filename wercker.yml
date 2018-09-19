@@ -52,7 +52,7 @@ deploy-to-clustertest:
       server: $KUBERNETES_MASTER
       token: $KUBERNETES_TOKEN
       insecure-skip-tls-verify: true
-      command: delete secret okeworkshop --namespace=$NS --ignore-not-found=true
+      command: delete secret okeworkshop --namespace=$NSTEST --ignore-not-found=true
   - kubectl:
       name: create OCR secret
       server: $KUBERNETES_SERVER
