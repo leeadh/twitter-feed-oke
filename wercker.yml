@@ -70,4 +70,4 @@ deploy-to-clusterSIT:
       server: $KUBERNETES_MASTER
       token: $KUBERNETES_TOKEN
       insecure-skip-tls-verify: true
-      command: apply -f ./alpha-office-product-catalog.yml --namespace=$NSSIT
+      command: apply -f ./alpha-office-product-catalog.kubernetes.yml --namespace=$NSSIT
