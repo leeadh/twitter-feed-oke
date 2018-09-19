@@ -36,6 +36,7 @@ metadata:
 spec:
   ports:
   - port: 30000
+    nodePort: 30432
     targetPort: 80
   selector:
     app: product-catalog-app
