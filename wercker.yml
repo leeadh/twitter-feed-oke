@@ -15,7 +15,7 @@ build-prod:
 
 
 #Push the docker image with our built and tested application to the Oracle Container Registry
-push-release-prod:
+push-releaseprod:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
@@ -29,7 +29,7 @@ push-release-prod:
 
 
 #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
-deploy-to-cluster-prod:
+deploy-to-clusterprod:
   box:
       id: alpine
       cmd: /bin/sh
